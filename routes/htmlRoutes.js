@@ -31,12 +31,17 @@ module.exports = function(app) {
 
   // Load account up page
   app.get("/account/:id", function(req, res) {
-    db.Users.findOne({ where: { id: req.params.id } }).then(function(data) {
-      console.log(data);
+    db.Users.findOne({ 
+      where: { 
+        id: req.params.id 
+      }, 
+      include: [db.Bills] }).then(function(data) {
+      console.log(data.Bills);
       var hbsObject = {
-        bills: data
+        name: data.user_name,
+        bills: data.Bills
       };
-      // console.log(hbsObject);
+      // // console.log(hbsObject);
       res.render("account", hbsObject);
     });
   });

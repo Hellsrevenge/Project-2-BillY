@@ -9,10 +9,10 @@ VALUES ('aaa@gmail.com', '1234', 'John'),
 ('ccc@gmail.com','0987','Lena');
 
 
-INSERT INTO bills (categoryId,userId,status,amount,title)
-VALUES
-(1,1,0,300,'red light violation'),
-(2,1,0,20000,'Zuckenberg hospital medical bill'),
-(3,1,0,10000, 'indicent exposure'),
-(3,2,0,15000,'battery incident administrative fine'),
-(1,3,0,179,'parking violation');
+-- INSERT INTO bills (categoryId,userId,status,amount,title)
+-- VALUES
+-- (1,0,300,'red light violation'),
+-- (1,0,20000,'Zuckenberg hospital medical bill'),
+-- (1,0,10000, 'indicent exposure'),
+-- (2,0,15000,'battery incident administrative fine'),
+-- (3,0,179,'parking violation');
