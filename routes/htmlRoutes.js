@@ -24,15 +24,25 @@ module.exports = function(app) {
 
   // Load sign up page
   app.get("/signup", function(req, res) {
-    db.Example.findAll({}).then(function() {
+    db.Bills.findAll({}).then(function() {
       res.render("signup");
     });
   });
 
   // Load account up page
-  app.get("/account", function(req, res) {
-    db.Example.findAll({}).then(function() {
-      res.render("account");
+  app.get("/account/:id", function(req, res) {
+    db.Users.findOne({ 
+      where: { 
+        id: req.params.id 
+      }, 
+      include: [db.Bills] }).then(function(data) {
+      console.log(data.Bills);
+      var hbsObject = {
+        name: data.user_name,
+        bills: data.Bills
+      };
+      // // console.log(hbsObject);
+      res.render("account", hbsObject);
     });
   });
 
