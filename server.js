@@ -1,9 +1,11 @@
+//BillY file
 require("dotenv").config();
 var express = require("express");
 var bodyParser = require("body-parser");
 var exphbs = require("express-handlebars");
-
+var session = require("express-session");
 var db = require("./models");
+var passport = require("./config/passport");
 
 var app = express();
 var PORT = process.env.PORT || 3000;
@@ -21,6 +23,11 @@ app.engine(
   })
 );
 app.set("view engine", "handlebars");
+
+//keep track of user login status
+app.use(session({ secret: "keyboard cat", resave: true, saveUninitialized: true }));
+app.use(passport.initialize());
+app.use(passport.session());
 
 // Routes
 require("./routes/apiRoutes")(app);
