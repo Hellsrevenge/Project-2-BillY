@@ -80,9 +80,9 @@
                     <h2>Bills!</h2>
 
                     <ul>
-                      {{#each bill}}
+                      {{#each bills}}
                       {{#unless paidBill}}
-                      {{> bills/bill-block paid=false}}
+                      {{> overviewPanel paid=false}}
                       {{/unless}}
                       {{/each}}
                     </ul>
@@ -90,9 +90,9 @@
                     <h2>Paid!</h2>
 
                     <ul>
-                      {{#each bill}}
+                      {{#each bills}}
                       {{#if paidBill}}
-                      {{> bills/bill-block paid=true}}
+                      {{> overviewPanel paid=true}}
                       {{/if}}
                       {{/each}}
                     </ul>
@@ -113,12 +113,7 @@
           <!-- Panel 2 -->
           <div class="tab-pane fade" id="panel666" role="tabpanel">
 
-            <p class="pt-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil odit magnam minima, soluta
-              doloribus reiciendis molestiae placeat unde eos molestias. Quisquam aperiam, pariatur. Tempora, placeat
-              ratione porro voluptate odit minima.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil odit magnam minima, soluta doloribus
-              reiciendis molestiae placeat unde eos molestias. Quisquam aperiam, pariatur. Tempora, placeat ratione
-              porro voluptate odit minima.</p>
+            <p class="pt-5">Your traffic ticket for <a>$195.60</a> is due in 6 days.</p>
 
           </div>
         </div>

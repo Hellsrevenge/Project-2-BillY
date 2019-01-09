@@ -1,6 +1,9 @@
-INSERT INTO category (id, name) VALUES (1, 'traffic tickets'),(2,'medical bills'),(3,'other fines');
 
-INSERT INTO users (email, password, name)
+USE paybills_db;
+
+-- INSERT INTO category (id, name) VALUES (1, 'traffic tickets'),(2,'medical bills'),(3,'other fines');
+
+INSERT INTO users (email, password, user_name)
 VALUES ('aaa@gmail.com', '1234', 'John'),
 ('bbb@gmail.com','4321','Max'),
 ('ccc@gmail.com','0987','Lena');
