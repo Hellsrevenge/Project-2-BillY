@@ -24,11 +24,15 @@ module.exports = function(app) {
 
   // Load sign up page
   app.get("/signup", function(req, res) {
-    db.Example.findAll({}).then(function(dbExamples) {
-      res.render("signup", {
-        msg: "BillY",
-        examples: dbExamples
-      });
+    db.Example.findAll({}).then(function() {
+      res.render("signup");
+    });
+  });
+
+  // Load account up page
+  app.get("/account", function(req, res) {
+    db.Example.findAll({}).then(function() {
+      res.render("account");
     });
   });
 
