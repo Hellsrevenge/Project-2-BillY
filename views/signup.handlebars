@@ -6,7 +6,7 @@
 
         {{!-- NavBar --}}
         <nav class="mb-1 navbar navbar-expand-lg navbar-dark orange lighten-1">
-          <a class="navbar-brand" href="#">BillY</a>
+          <a class="navbar-brand" href="/">BillY</a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-555"
             aria-controls="navbarSupportedContent-555" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -14,7 +14,7 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent-555">
             <ul class="navbar-nav mr-auto">
               <li class="nav-item active">
-                <a class="nav-link" href="/overview">Overview
+                <a class="nav-link" href="/">Overview
                   <span class="sr-only">(current)</span>
                 </a>
               </li>
@@ -28,7 +28,7 @@
             <ul class="navbar-nav ml-auto nav-flex-icons">
               <li class="nav-item avatar">
                 <a class="nav-link p-0" href="#">
-                  <img src="https://mdbootstrap.com/img/Photos/Avatars/avatar-5.jpg" class="rounded-circle z-depth-0"
+                  <img src="https://i.imgur.com/nz9HEYW.jpg" class="rounded-circle z-depth-0"
                     alt="avatar image" height="35">
                 </a>
               </li>
@@ -37,30 +37,55 @@
         </nav>
 
         {{!-- Main Body --}}
-        <h2>This is our Home Page!</h2>
+        <h2 class="spacer">Create an account to begin!</h2>
         <form class="clearfix mb-4" action="POST">
           <div class="form-group">
-            <label for="example-text">Example Text</label>
-            <input type="text" id="example-text" class="form-control" aria-describedby="example-text" placeholder="Enter Example Text">
+            <label for="example-text">Desired Username</label>
+            <input type="text" id="example-text" class="form-control" aria-describedby="example-text" placeholder="DarthRooster">
           </div>
           <div class="form-group">
-            <label for="example-description">Example Description</label>
-            <textarea class="form-control" id="example-description" aria-describedby="example-description" placeholder="Enter Example Description"></textarea>
+            <label for="example-description">Email</label>
+            <input type="text" class="form-control" id="example-description" aria-describedby="example-description" placeholder="jackson5@ymail.com"></input>
           </div>
           <button id="submit" class="btn btn-primary float-right">Submit</button>
         </form>
-        <h3>Examples:</h3>
-        <ul id="example-list" class="list-group">
-          {{#each examples}}
-          <li data-id="{{this.id}}" class="list-group-item">
-            <a href="example/{{this.id}}">{{this.text}}</a>
-            <button class="btn btn-danger float-right delete">ｘ</button>
-          </li>
-          {{/each}}
-        </ul>
+
       </div>
     </div>
   </div>
+  <!-- Footer -->
+  <footer class="page-footer font-small blue pt-4 spacer">
+    <div class="container-fluid text-center text-md-left">
+      <div class="row">
+        <div class="col-md-6 mt-md-0 mt-3">
+          <h5 class="text-uppercase">Contact Us</h5>
+          <p>
+            Making BillY more than just an assistant, we aimed to make you something fun. Who said responsibility can't be cool?
+          </p>
+        </div>
+        <hr class="clearfix w-100 d-md-none pb-3">
+          <div class="col-md-6 mb-md-0 mb-6">
+            <h5 class="text-uppercase">Developers</h5>
+            <ul class="list-unstyled">
+              <li>
+                <a href="https://github.com/Hellsrevenge">Varvara</a>
+              </li>
+              <li>
+                <a href="https://github.com/mpoblete27">Mickey</a>
+              </li>
+              <li>
+                <a href="https://github.com/jarrenpatao">Jarren</a>
+              </li>
+            </ul>
+
+          </div>
+
+      </div>
+    </div>
+    <div class="footer-copyright text-center py-3">
+      © 2019 Copyright
+    </div>
+  </footer>
 </div>
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -69,4 +94,6 @@
 <script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
   crossorigin="anonymous"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.6.1/js/mdb.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+<script type="text/javascript" src="/js/chart.js"></script>
 <script type="text/javascript" src="/js/index.js"></script>
