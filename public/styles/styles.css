@@ -1,3 +1,12 @@
 .list-group-item {
   line-height: 2.5;
 }
+
+#rightSide {
+  margin-left: 20%;
+  margin-bottom: 2em;
+}
+
+.spacer {
+  margin-top: 10%;
+}

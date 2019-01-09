@@ -19,16 +19,16 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/upcoming">Upcoming Bills</a>
+                <a class="nav-link" href="/signup">Sign Up</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/history">Payment History</a>
+                <a class="nav-link" href="/signin">Sign In</a>
               </li>
             </ul>
             <ul class="navbar-nav ml-auto nav-flex-icons">
               <li class="nav-item avatar">
-                <a class="nav-link p-0" href="#">
-                  <img src="https://mdbootstrap.com/img/Photos/Avatars/avatar-5.jpg" class="rounded-circle z-depth-0"
+                <a class="nav-link p-0" href="/overview">
+                  <img src="http://1.bp.blogspot.com/-23TXoRF3668/UEO2UNtE2oI/AAAAAAAAAGI/FFmetHX4mAQ/s1600/Pikachu_Smiling_Face_Minimal_HD_Wallpaper.jpg" class="rounded-circle z-depth-0"
                     alt="avatar image" height="35">
                 </a>
               </li>
@@ -37,17 +37,48 @@
         </nav>
 
         {{!-- Main Body --}}
-        <h2>Welcome to BillY!</h2>
+        <h2 class="spacer">Welcome to BillY!</h2>
         
-        <canvas id="myChart"></canvas>
 
+        <div class="row spacer">
+          {{!-- Pie Chart --}}
+          <div class="col-md-8">
+            <canvas id="myChart"></canvas>
+          </div>
+          {{!-- Right Side --}}
+          <div class="col-md-4">
+            <div id="rightSide" class="carousel slide" data-ride="carousel">
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <i class="fas fa-address-book fa-7x"></i>
+                </div>
+                <div class="carousel-item">
+                  <i class="far fa-address-card fa-7x"></i>
+                </div>
+                <div class="carousel-item">
+                  <i class="fas fa-book fa-7x"></i>
+                </div>
+              </div>
+            </div>
+            <div id="rightInfo">
+              <p>
+                Bill tracking web application to view and pay your tickets/bills/fines at one place as well as see previously paid bills. BillY allows users to see all the tickets/fines/bills and track their status as well as see the statistic of financial activity. WIth BillY you are always aware of your debts.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="spacer">
+          <h2>Try for yourself!</h2>
+        </div>
         <form class="clearfix mb-4" action="POST">
           <div class="form-group">
-            <label for="example-text">Example Text</label>
+            <label for="example-text">Example Bill Entry</label>
             <input type="text" id="example-text" class="form-control" aria-describedby="example-text" placeholder="Enter Example Text">
           </div>
           <div class="form-group">
-            <label for="example-description">Example Description</label>
+            <label for="example-description">Bill Description</label>
             <textarea class="form-control" id="example-description" aria-describedby="example-description" placeholder="Enter Example Description"></textarea>
           </div>
           <button id="submit" class="btn btn-primary float-right">Submit</button>
@@ -64,6 +95,40 @@
       </div>
     </div>
   </div>
+
+  <!-- Footer -->
+<footer class="page-footer font-small blue pt-4">
+    <div class="container-fluid text-center text-md-left">
+      <div class="row">
+        <div class="col-md-6 mt-md-0 mt-3">
+          <h5 class="text-uppercase">Contact Us</h5>
+          <p>
+            Making BillY more than just an assistant, we aimed to make you something fun. Who said responsibility can't be cool?
+          </p>
+        </div>
+        <hr class="clearfix w-100 d-md-none pb-3">
+          <div class="col-md-6 mb-md-0 mb-6">
+            <h5 class="text-uppercase">Developers</h5>
+            <ul class="list-unstyled">
+              <li>
+                <a href="https://github.com/Hellsrevenge">Varvara</a>
+              </li>
+              <li>
+                <a href="https://github.com/mpoblete27">Mickey</a>
+              </li>
+              <li>
+                <a href="https://github.com/jarrenpatao">Jarren</a>
+              </li>
+            </ul>
+
+          </div>
+
+      </div>
+    </div>
+    <div class="footer-copyright text-center py-3">
+      © 2019 Copyright
+    </div>
+  </footer>
 </div>
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
