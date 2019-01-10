@@ -1,6 +1,5 @@
-// var Sequelize=require('sequelize');
-
-module.exports = function(sequelize, DataTypes) {
+'use strict';
+module.exports = (sequelize, DataTypes) => {
   var Bills = sequelize.define("Bills", {
     title: DataTypes.STRING,
     status: DataTypes.INTEGER,
@@ -11,6 +10,11 @@ module.exports = function(sequelize, DataTypes) {
     // We're saying that a Bills should belong to an Author
     // A Bills can't be created without an Author due to the foreign key constraint
     Bills.belongsTo(models.Users, {
+      foreignKey: {
+        allowNull: false
+      }
+    });
+    Bills.belongsTo(models.Categories, {
       foreignKey: {
         allowNull: false
       }
