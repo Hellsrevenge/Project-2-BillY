@@ -14,15 +14,9 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent-555">
             <ul class="navbar-nav mr-auto">
               <li class="nav-item active">
-                <a class="nav-link" href="/">Overview
+                <a class="nav-link" href="/">Account
                   <span class="sr-only">(current)</span>
                 </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/upcoming">Upcoming Bills</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/history">Payment History</a>
               </li>
             </ul>
             <ul class="navbar-nav ml-auto nav-flex-icons">
@@ -35,13 +29,13 @@
           </div>
         </nav>
 
-        {{!-- Main Body --}}
-        <h2 class="spacer">Welcome back!</h2>
+        {{!-- Banner --}}
+        <img class="logo" src="https://i.imgur.com/EczUgY1.jpg">
         <!-- Nav tabs -->
-        <ul class="nav nav-tabs md-tabs nav-justified default-color" role="tablist">
+        <ul class="nav nav-tabs md-tabs nav-justified warning-color" role="tablist">
           <li class="nav-item">
             <a class="nav-link active" data-toggle="tab" href="#panel555" role="tab">
-              <i class="fas fa-user pr-2"></i>Username{{name}}</a>
+              <i class="fas fa-user pr-2"></i>Welcome, {{name}}</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" data-toggle="tab" href="#panel666" role="tab">
@@ -77,15 +71,17 @@
                   <!-- Panel 1 -->
                   <div class="tab-pane fade in show active" id="panel21" role="tabpanel">
                     <h5 class="my-2 h5">Overview</h5>
-                    <h2>{{name}}'s Bills!</h2>
+                    <h2>{{name}}'s Outstanding Bills!</h2>
 
                     <ul>
                       {{#each bills}}
+                      {{#if status}}
                       {{> overviewPanel}}
+                      {{/if}}
                       {{/each}}
                     </ul>
 
-                    <h2>Paid!</h2>
+                    <h2>Paid/Settled</h2>
 
                     {{!-- <ul>
                       {{#each bills}}
@@ -98,6 +94,13 @@
                   <!-- Panel 2 -->
                   <div class="tab-pane fade" id="panel22" role="tabpanel">
                     <h5 class="my-2 h5">Upcoming Bills</h5>
+                    <ul>
+                      {{#each bills}}
+                      {{#if status}}
+                      {{> overviewPanel}}
+                      {{/if}}
+                      {{/each}}
+                    </ul>
                   </div>
                   <!-- Panel 3 -->
                   <div class="tab-pane fade" id="panel23" role="tabpanel">
