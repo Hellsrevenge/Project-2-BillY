@@ -1,16 +1,38 @@
-// var Sequelize=require('sequelize');
+'use strict';
 
-module.exports = function(sequelize, DataTypes) {
+var BILL_STATUS = {
+  0: "Unpaid",
+  1: "Paid",
+  2: "Dismissed"
+};
+
+module.exports = (sequelize, DataTypes) => {
   var Bills = sequelize.define("Bills", {
-    id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
-    categoryId: DataTypes.INTEGER,
-    userId: DataTypes.INTEGER,
     title: DataTypes.STRING,
-    status: DataTypes.INTEGER,
-    amount: DataTypes.INTEGER,
-    createdAt: DataTypes.DATE,
-    updatedAt: DataTypes.DATE
+    status: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      get() {
+        return BILL_STATUS[this.getDataValue("status")];
+      }
+    },
+    amount: DataTypes.INTEGER
   });
+
+  Bills.associate = function(models) {
+    // We're saying that a Bills should belong to an Author
+    // A Bills can't be created without an Author due to the foreign key constraint
+    Bills.belongsTo(models.Users, {
+      foreignKey: {
+        allowNull: false
+      }
+    });
+    Bills.belongsTo(models.Categories, {
+      foreignKey: {
+        allowNull: false
+      }
+    });
+  };
 
   return Bills;
 };
