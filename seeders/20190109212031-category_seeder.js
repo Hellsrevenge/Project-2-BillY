@@ -1,36 +1,27 @@
-'use strict';
+"use strict";
 
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    
-      return queryInterface.bulkInsert('Bills', [{
-        title: 'Parking Violation',
-        status: 0,
-        amount: 1200,
+    return queryInterface.bulkInsert("Categories", [
+      {
+        id: 1,
+        name: "traffic tickets",
         createdAt: new Date(),
         updatedAt: new Date(),
-        userId: 1,
-        categoryId: 1
       },
       {
-        title: 'Chicken Violation',
-        status: 1,
-        amount: 80,
+        id: 2,
+        name: "medical bills",
         createdAt: new Date(),
         updatedAt: new Date(),
-        userId: 1,
-        categoryId: 2
       },
       {
-        title: 'Parking Murder',
-        status: 0,
-        amount: 100,
+        id: 3,
+        name: "other fines",
         createdAt: new Date(),
         updatedAt: new Date(),
-        userId: 1,
-        categoryId: 3
-      }]);
-    
+      }
+    ], {});
   },
 
   down: (queryInterface, Sequelize) => {
