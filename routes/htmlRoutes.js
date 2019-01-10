@@ -29,6 +29,10 @@ module.exports = function(app) {
     });
   });
 
+  app.get("/signin", function(req, res) {
+    res.render("signin");
+  });
+
   // Load account up page
   app.get("/account/:id", function(req, res) {
     db.Users.findOne({ 
