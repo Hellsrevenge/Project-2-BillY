@@ -1,8 +1,21 @@
 'use strict';
+
+var BILL_STATUS = {
+  0: "Unpaid",
+  1: "Paid",
+  2: "Dismissed"
+};
+
 module.exports = (sequelize, DataTypes) => {
   var Bills = sequelize.define("Bills", {
     title: DataTypes.STRING,
-    status: DataTypes.INTEGER,
+    status: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      get() {
+        return BILL_STATUS[this.getDataValue("status")];
+      }
+    },
     amount: DataTypes.INTEGER
   });
 
