@@ -35,12 +35,13 @@ module.exports = function(app) {
 
   // Load account up page
   app.get("/account/:id", function(req, res) {
-    db.Users.findOne({ 
-      where: { 
-        id: req.params.id 
-      }, 
-      include: [db.Bills,db.Payments] }).then(function(data) {
-      console.log(data.Bills);
+    db.Users.findOne({
+      where: {
+        id: req.params.id
+      },
+      include: [db.Bills, db.Payments]
+    }).then(function(data) {
+      console.log(data);
       var hbsObject = {
         name: data.user_name,
         bills: data.Bills,

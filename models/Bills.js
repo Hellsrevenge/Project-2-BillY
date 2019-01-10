@@ -16,7 +16,20 @@ module.exports = (sequelize, DataTypes) => {
         return BILL_STATUS[this.getDataValue("status")];
       }
     },
-    amount: DataTypes.INTEGER
+    amount: DataTypes.INTEGER,
+    paid: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: false
+    },
+    unpaid: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: true
+    },
+    dismissed: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: false
+    }
+
   });
 
   Bills.associate = function(models) {
