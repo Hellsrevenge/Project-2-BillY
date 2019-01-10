@@ -35,11 +35,12 @@ module.exports = function(app) {
       where: { 
         id: req.params.id 
       }, 
-      include: [db.Bills] }).then(function(data) {
+      include: [db.Bills,db.Payments] }).then(function(data) {
       console.log(data.Bills);
       var hbsObject = {
         name: data.user_name,
-        bills: data.Bills
+        bills: data.Bills,
+        payments: data.Payments
       };
       // // console.log(hbsObject);
       res.render("account", hbsObject);
