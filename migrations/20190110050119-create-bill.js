@@ -21,6 +21,14 @@ module.exports = {
         type: Sequelize.BOOLEAN,
         // defaultStatus: false
       },
+      unpaid: {
+        type: Sequelize.BOOLEAN,
+        // defaultStatus: false
+      },
+      dismissed: {
+        type: Sequelize.BOOLEAN,
+        // defaultStatus: false
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE
