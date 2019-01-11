@@ -28,11 +28,8 @@ $(document).ready(function() {
       email: email,
       password: password
     }).then(function(data) {
-<<<<<<< HEAD
-      console.log(data)
-=======
->>>>>>> a4ea1520af15b7da5cfceedf671b80c7aae15e01
-      window.location.href = "/account/:id";
+      // console.log(data)
+      window.location.href = `/account/${data.id}`;
       // If there's an error, log the error
     }).catch(function(err) {
       console.log(err);

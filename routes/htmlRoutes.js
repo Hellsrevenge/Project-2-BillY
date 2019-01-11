@@ -17,9 +17,7 @@ module.exports = function(app) {
 
   // Load sign up page
   app.get("/signup", function(req, res) {
-    db.Bills.findAll({}).then(function() {
       res.render("signup");
-    });
   });
 
   //if user is authenticated, go to members page
@@ -41,16 +39,18 @@ module.exports = function(app) {
     if (req.user) {
       res.redirect("/members");
     }
-    res.sendFile(path.join(__dirname, "../public/login.html"));
+    res.render("login");
   });
 
   app.post("/api/signup", function(req, res) {
     console.log(req.body);
     db.Users.create({
+      user_name: req.body.user_name,
       email: req.body.email,
       password: req.body.password
-    }).then(function() {
-      res.redirect(307, "/api/login");
+    }).then(function(data) {
+      // console.log(data.id)
+      res.json(data)
     }).catch(function(err) {
       console.log(err);
       res.json(err);
@@ -69,9 +69,11 @@ module.exports = function(app) {
   app.post('/api/login',
     passport.authenticate('local'),
     function(req, res) {
+      console.log("chicken")
     // If this function gets called, authentication was successful.
     // `req.user` contains the authenticated user.
-    res.redirect("/account/:id");
+    // res.redirect(`/account/${req.user.id}`);
+      res.json(req.user)
   });
   
   // Load example page and pass in an example by id

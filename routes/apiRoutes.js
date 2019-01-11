@@ -8,7 +8,15 @@ module.exports = function(app) {
     });
   });
 
-  // Create a new example
+  //make a new user/account
+  // app.post("/api/signup", function(req, res) {
+  //   db.Users.create(req.body).then(function(user) {
+  //     console.log(user)
+  //     res.json(user);
+  //   });
+  // });
+
+  // Create a new bill
   app.post("/api/bills", function(req, res) {
     db.Bills.create(req.body).then(function(bill) {
       res.json(bill);
