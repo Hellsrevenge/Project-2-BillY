@@ -21,9 +21,9 @@ module.exports = function(app) {
   });
 
   //if user is authenticated, go to members page
-  app.get("/members", isAuthenticated, function(req, res) {
-    res.redirect("/hello");
-  });
+  // app.get("/members", isAuthenticated, function(req, res) {
+  //   res.redirect("/hello");
+  // });
 
   // Load index model page
   app.get("/", function(req, res) {
@@ -85,12 +85,6 @@ module.exports = function(app) {
         example: dbExample
       });
     });
-  });
-
-
-
-  app.get("/signin", function(req, res) {
-    res.render("signin");
   });
 
   // Load account up page
