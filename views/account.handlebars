@@ -14,12 +14,15 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent-555">
             <ul class="navbar-nav mr-auto">
               <li class="nav-item active">
-                <a class="nav-link" href="/">Account
+                <a class="nav-link" href="/account">Account
                   <span class="sr-only">(current)</span>
                 </a>
               </li>
             </ul>
             <ul class="navbar-nav ml-auto nav-flex-icons">
+              <li class="nav-item active">
+                <a class="nav-link" href="/logout" style="margin-right: 10px">Logout</a>
+              </li>
               <li class="nav-item avatar">
                 <a class="nav-link p-0" href="#">
                   <img src="https://i.imgur.com/nz9HEYW.jpg" class="rounded-circle z-depth-0" alt="avatar image" height="35">
@@ -71,7 +74,7 @@
                   <!-- Panel 1 -->
                   <div class="tab-pane fade in show active" id="panel21" role="tabpanel">
                     <h5 class="my-2 h5">Overview</h5>
-                    <h2>{{name}}'s Outstanding Bills!</h2>
+                    <hr><h2>{{name}}'s Outstanding Bills</h2><hr>
 
                     <ul>
                       {{#each bills}}
@@ -81,7 +84,7 @@
                       {{/each}}
                     </ul>
 
-                  <h2>Paid/Settled</h2>
+                  <hr><h2>Paid/Settled</h2><hr>
 
                     <ul>
                       {{#each bills}}
@@ -94,7 +97,7 @@
                   </div>
                   <!-- Panel 2 -->
                   <div class="tab-pane fade" id="panel22" role="tabpanel">
-                    <h5 class="my-2 h5">Upcoming Bills</h5>
+                    <h5 class="my-2 h5">Upcoming Bills</h5><hr>
                     <ul>
                       {{#each bills}}
                       {{#if unpaid}}
@@ -105,7 +108,7 @@
                   </div>
                   <!-- Panel 3 -->
                   <div class="tab-pane fade" id="panel23" role="tabpanel">
-                    <h5 class="my-2 h5">Payment History</h5>
+                    <h5 class="my-2 h5">Payment History</h5><hr>
                       <ul>
                         {{#each payments}}
                           {{> paymHistory}}
