@@ -31,7 +31,7 @@ module.exports = (sequelize, DataTypes) => {
     },
     dueDate: {
       type: DataTypes.DATE,
-      defaultValue: false
+      // defaultValue: false
     }
 
   });
