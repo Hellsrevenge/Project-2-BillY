@@ -6,16 +6,34 @@ var isAuthenticated = require("../config/middleware/isAuthenticated");
 
 module.exports = function(app) {
 
-  app.get("/", function(req, res) {
-    // If the user already has an account send them to the members page
-    if (req.user) {
-      res.redirect("/members");
-    }
-    res.sendFile(path.join(__dirname, "../public/signup.html"));
+  //load homepage
+  // app.get("/", function(req, res) {
+  //   // If the user already has an account send them to the members page
+  //   if (req.user) {
+  //     res.redirect("/hello");
+  //   }
+  //   res.sendFile(path.join(__dirname, "../public/members.html"));
+  // });
+
+  // Load sign up page
+  app.get("/signup", function(req, res) {
+    db.Bills.findAll({}).then(function() {
+      res.render("signup");
+    });
   });
 
+  //if user is authenticated, go to members page
   app.get("/members", isAuthenticated, function(req, res) {
     res.redirect("/hello");
+  });
+
+  // Load index model page
+  app.get("/", function(req, res) {
+    db.Bills.findAll({}).then(function(bills) {
+      res.render("index", {
+        msg: "Welcome!",
+      });
+    });
   });
 
   app.get("/login", function(req, res) {
@@ -46,15 +64,6 @@ module.exports = function(app) {
   //   res.sendFile(path.join(__dirname, "../public/members.html"));
   // });
 
-  // Load index page
-  app.get("/hello", function(req, res) {
-    db.Bills.findAll({}).then(function(bills) {
-      res.render("index", {
-        msg: "Welcome!",
-        examples: bills
-      });
-    });
-  });
 
     //login page
   app.post('/api/login',
@@ -76,12 +85,7 @@ module.exports = function(app) {
     });
   });
 
-  // Load sign up page
-  app.get("/signup", function(req, res) {
-    db.Bills.findAll({}).then(function() {
-      res.render("signup");
-    });
-  });
+
 
   // Load account up page
   app.get("/account/:id", function(req, res) {
