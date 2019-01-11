@@ -14,12 +14,15 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent-555">
             <ul class="navbar-nav mr-auto">
               <li class="nav-item active">
-                <a class="nav-link" href="/">Account
+                <a class="nav-link" href="/account">Account
                   <span class="sr-only">(current)</span>
                 </a>
               </li>
             </ul>
             <ul class="navbar-nav ml-auto nav-flex-icons">
+              <li class="nav-item active">
+                <a class="nav-link" href="/logout" style="margin-right: 10px">Logout</a>
+              </li>
               <li class="nav-item avatar">
                 <a class="nav-link p-0" href="#">
                   <img src="https://i.imgur.com/nz9HEYW.jpg" class="rounded-circle z-depth-0" alt="avatar image" height="35">
@@ -75,15 +78,9 @@
 
                     <ul>
                       {{#each bills}}
-<<<<<<< HEAD
-                        {{#if}}
-                      {{> overviewPanel}}
-                        {{/if}}
-=======
                       {{#if unpaid}}
                       {{> overviewPanel}}
                       {{/if}}
->>>>>>> master
                       {{/each}}
                     </ul>
 
