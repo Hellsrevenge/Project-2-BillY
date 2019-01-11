@@ -45,10 +45,28 @@ module.exports = function(app) {
       var hbsObject = {
         name: data.user_name,
         bills: data.Bills,
-        payments: data.Payments
+        payments: data.Payments,
+        date: Date.now()
       };
       // // console.log(hbsObject);
       res.render("account", hbsObject);
+    });
+  });
+
+  app.post("/account/:accountId/pay/:billId", function(req, res) {
+    db.Bills.findById(req.params.billId).then(function(bill) {
+      bill.unpaid = false;
+      bill.paid = true;
+      bill.save();
+      db.Payments.create({
+        status: 1,
+        BillId: bill.id,
+        amount: bill.amount,
+        UserId: bill.UserId,
+        transaction: Math.random().toString(36).substring(2)
+      }).then(function(payment) {
+        res.redirect("/account/" + payment.UserId);
+      });
     });
   });
 

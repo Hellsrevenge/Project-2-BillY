@@ -12,6 +12,7 @@ module.exports = {
         unpaid: false,
         createdAt: new Date(),
         updatedAt: new Date(),
+        dueDate: new Date(new Date().getTime()+10*24*60*60*1000), // 10 days
         userId: 1,
         categoryId: 1
       },
@@ -23,6 +24,7 @@ module.exports = {
         unpaid: true,
         createdAt: new Date(),
         updatedAt: new Date(),
+        dueDate: new Date(new Date().getTime()+9*24*60*60*1000),
         userId: 1,
         categoryId: 1
       },
@@ -34,6 +36,7 @@ module.exports = {
         unpaid: true,
         createdAt: new Date(),
         updatedAt: new Date(),
+        dueDate: new Date(new Date().getTime()-(15*24*60*60*1000)),
         userId: 1,
         categoryId: 2
       },
@@ -45,6 +48,7 @@ module.exports = {
         unpaid: true,
         createdAt: new Date(),
         updatedAt: new Date(),
+        dueDate: new Date(new Date().getTime()+8*24*60*60*1000),
         userId: 1,
         categoryId: 3
       },
@@ -56,6 +60,7 @@ module.exports = {
         unpaid: true,
         createdAt: new Date(),
         updatedAt: new Date(),
+        dueDate: new Date(new Date().getTime()+20*24*60*60*1000),
         userId: 2,
         categoryId: 1
       },
@@ -67,6 +72,7 @@ module.exports = {
         unpaid: false,
         createdAt: new Date(),
         updatedAt: new Date(),
+        dueDate: new Date(new Date().getTime()+13*24*60*60*1000),
         userId: 2,
         categoryId: 2
       },
@@ -78,6 +84,7 @@ module.exports = {
         unpaid: false,
         createdAt: new Date(),
         updatedAt: new Date(),
+        dueDate: new Date(new Date().getTime()+18*24*60*60*1000),
         userId: 3,
         categoryId: 1
       }]);

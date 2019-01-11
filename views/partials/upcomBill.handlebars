@@ -1,17 +1,19 @@
-<ul>
-  <li>
-    <p>Transaction No: {{transaction}}</p>
-  </li>
+<ul class="{{#if isDue}}overdue{{/if}}">
+    <li>
+        <p>Title: {{title}} {{#if isDue}}(Overdue){{/if}}</p>
+    </li>
   <li>
     <p>Status: {{status}}</p>
   </li>
   <li>
     <p>Amount: {{amount}}</p>
   </li>
-  <li>
-    <p>Date: {{createdAt}}</p>
-  </li>
-  
-  <button class="btn aqua-gradient">Make Payment</button>
-  <hr>
+    <li>
+        <p>Due Date: {{dueDate}}</p>
+    </li>
 </ul>
+
+<form action="/account/{{UserId}}/pay/{{id}}" method="post">
+    <button type="submit"  class="btn aqua-gradient">Make Payment</button>
+</form>
+<hr>
