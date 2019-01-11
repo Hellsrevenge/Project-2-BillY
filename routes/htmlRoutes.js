@@ -45,7 +45,8 @@ module.exports = function(app) {
       var hbsObject = {
         name: data.user_name,
         bills: data.Bills,
-        payments: data.Payments
+        payments: data.Payments,
+        date: Date.now()
       };
       // // console.log(hbsObject);
       res.render("account", hbsObject);

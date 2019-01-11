@@ -14,3 +14,7 @@
 .logo {
   margin-left: 170px;
 }
+.overdue {
+  background: #f00;
+  color: #fff;
+}

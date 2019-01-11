@@ -28,9 +28,17 @@ module.exports = (sequelize, DataTypes) => {
     dismissed: {
       type: DataTypes.BOOLEAN,
       defaultValue: false
+    },
+    dueDate: {
+      type: DataTypes.DATE,
+      defaultValue: false
     }
 
   });
+
+  Bills.prototype.isDue = function () {
+    return this.getDataValue("dueDate") < Date.now();
+  };
 
   Bills.associate = function(models) {
     // We're saying that a Bills should belong to an Author
