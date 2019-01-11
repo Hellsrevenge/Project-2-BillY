@@ -5,9 +5,9 @@ module.exports = {
       return queryInterface.bulkInsert('Payments', [{
         status: 1,
         amount: 320,
-        billId: 1,
-        userId: 1,
-        transaction: "Xfa-6fd0a6s0f8d",
+        BillId: 1,
+        UserId: 1,
+        transaction: "9a8bc2gsd89d",
         createdAt: new Date(),
         updatedAt: new Date(),
       }], {});
