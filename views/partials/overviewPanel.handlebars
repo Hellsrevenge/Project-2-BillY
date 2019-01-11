@@ -1,7 +1,6 @@
-<ul>
-  <p>--------------------------------------</p>
+<ul class="{{#if isDue}}overdue{{/if}}">
   <li>
-    <p>Title: {{title}}</p>
+    <p>Title: {{title}} {{#if isDue}}(Overdue){{/if}}</p>
   </li>
   <li>
     <p>Status: {{status}}</p>
@@ -9,5 +8,8 @@
   <li>
     <p>Amount: {{amount}}</p>
   </li>
-  <p>--------------------------------------</p>
+    <li>
+        <p>Due Date: {{dueDate}}</p>
+    </li>
+  <hr>
 </ul>

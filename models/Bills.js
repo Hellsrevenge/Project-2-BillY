@@ -16,8 +16,29 @@ module.exports = (sequelize, DataTypes) => {
         return BILL_STATUS[this.getDataValue("status")];
       }
     },
-    amount: DataTypes.INTEGER
+    amount: DataTypes.INTEGER,
+    paid: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: false
+    },
+    unpaid: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: true
+    },
+    dismissed: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: false
+    },
+    dueDate: {
+      type: DataTypes.DATE,
+      defaultValue: false
+    }
+
   });
+
+  Bills.prototype.isDue = function () {
+    return this.getDataValue("dueDate") < Date.now();
+  };
 
   Bills.associate = function(models) {
     // We're saying that a Bills should belong to an Author
