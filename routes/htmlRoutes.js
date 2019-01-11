@@ -27,17 +27,13 @@ module.exports = function(app) {
 
   // Load index model page
   app.get("/", function(req, res) {
-    db.Bills.findAll({}).then(function(bills) {
-      res.render("index", {
-        msg: "Welcome!",
-      });
-    });
+    res.render("index");
   });
 
   app.get("/login", function(req, res) {
     // If the user already has an account send them to the members page
     if (req.user) {
-      res.redirect("/members");
+      res.redirect(`/account/${req.user.id}`);
     }
     res.render("login");
   });

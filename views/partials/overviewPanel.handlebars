@@ -1,15 +1,17 @@
-<ul class="{{#if isDue}}overdue{{/if}}">
-  <li>
-    <p>Title: {{title}} {{#if isDue}}(Overdue){{/if}}</p>
-  </li>
-  <li>
-    <p>Status: {{status}}</p>
-  </li>
-  <li>
-    <p>Amount: {{amount}}</p>
-  </li>
+<div class="rounded">
+  <ul class="{{#if isDue}}overdue{{/if}}">
     <li>
-        <p>Due Date: {{dueDate}}</p>
+      <p>Title: {{title}} {{#if isDue}}(Overdue){{/if}}</p>
     </li>
-  <hr>
-</ul>
+    <li>
+      <p>Status: {{status}}</p>
+    </li>
+    <li>
+      <p>Amount: {{amount}}</p>
+    </li>
+    <li>
+      <p>Due Date: {{dueDate}}</p>
+    </li>
+    <hr>
+  </ul>
+</div>
