@@ -14,15 +14,20 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent-555">
             <ul class="navbar-nav mr-auto">
               <li class="nav-item active">
-                <a class="nav-link" href="/signup">Sign Up<span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="/">Overview
+                  <span class="sr-only">(current)</span>
+                </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/login">Log In</a>
+                <a class="nav-link" href="/upcoming">Upcoming Bills</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/history">Payment History</a>
               </li>
             </ul>
             <ul class="navbar-nav ml-auto nav-flex-icons">
               <li class="nav-item avatar">
-                <a class="nav-link p-0" href="/account/1">
+                <a class="nav-link p-0" href="#">
                   <img src="https://i.imgur.com/nz9HEYW.jpg" class="rounded-circle z-depth-0"
                     alt="avatar image" height="35">
                 </a>
@@ -32,65 +37,22 @@
         </nav>
 
         {{!-- Main Body --}}
-        <img class="logo" src="https://i.imgur.com/EczUgY1.jpg">
-        
-        <hr>
-        <div class="row">
-          {{!-- Pie Chart --}}
-          <div class="col-md-8">
-            <canvas id="myChart"></canvas>
-          </div>
-          {{!-- Right Side --}}
-          <div class="col-md-4">
-            <div id="rightSide" class="carousel slide" data-ride="carousel">
-              <div class="carousel-inner">
-                <div class="carousel-item active">
-                  <i class="fas fa-address-book fa-7x"></i>
-                </div>
-                <div class="carousel-item">
-                  <i class="far fa-address-card fa-7x"></i>
-                </div>
-                <div class="carousel-item">
-                  <i class="fas fa-book fa-7x"></i>
-                </div>
-              </div>
-            </div>
-            <div id="rightInfo">
-              <p>
-                Bill tracking web application to view and pay your tickets/bills/fines at one place as well as see previously paid bills. BillY allows users to see all the tickets/fines/bills and track their status as well as see the statistic of financial activity. WIth BillY you are always aware of your debts.
-              </p>
-            </div>
-          </div>
-
-        </div>
-
-        {{!-- <div class="spacer">
-          <h2>Try for yourself!</h2>
-        </div>
+        <h2 class="spacer">Login to you Account</h2>
         <form class="clearfix mb-4" action="POST">
           <div class="form-group">
-            <label for="example-text">Example Bill Entry</label>
-            <input type="text" id="example-text" class="form-control" aria-describedby="example-text" placeholder="Enter Example Text">
+            <label for="example-text">Email</label>
+            <input type="text" id="example-text" class="form-control" aria-describedby="example-text" placeholder="DarthRooster">
           </div>
           <div class="form-group">
-            <label for="example-description">Bill Amount</label>
-            <input class="form-control" id="example-description" aria-describedby="example-description" placeholder="Enter Example Amount"></input>
+            <label for="example-description">password</label>
+            <input type="text" class="form-control" id="example-description" aria-describedby="example-description" placeholder="jackson5@ymail.com"></input>
           </div>
           <button id="submit" class="btn btn-primary float-right">Submit</button>
         </form>
-        <h3>Examples:</h3>
-        <ul id="example-list" class="list-group">
-          {{#each bills}}
-          <li data-id="{{this.id}}" class="list-group-item">
-            <a href="Bills/{{this.id}}">{{this.text}}</a>
-            <button class="btn btn-danger float-right delete">Paid</button>
-          </li>
-          {{/each}}
-        </ul>
+
       </div>
     </div>
-  </div> --}}
-
+  </div>
   <!-- Footer -->
   <footer class="page-footer font-small blue pt-4 spacer">
     <div class="container-fluid text-center text-md-left">
@@ -124,7 +86,6 @@
       © 2019 Copyright
     </div>
   </footer>
-  
 </div>
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
