@@ -32,6 +32,16 @@
 
         {{!-- Main Body --}}
         <h2 class="spacer">Login to you Account</h2>
+          {{#if info}}
+              <div class="info">
+                  {{info}}
+              </div>
+          {{/if}}
+          {{#if error}}
+            <div class="error">
+                {{error}}
+            </div>
+          {{/if}}
         <form class="clearfix mb-4 login" action="/login" method="POST">
           <div class="form-group">
             <label for="example-text">Email</label>

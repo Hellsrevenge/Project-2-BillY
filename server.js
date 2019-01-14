@@ -6,6 +6,7 @@ var exphbs = require("express-handlebars");
 var session = require("express-session");
 var db = require("./models");
 var passport = require("./config/passport");
+var flash = require("connect-flash");
 
 var app = express();
 var PORT = process.env.PORT || 3000;
@@ -28,6 +29,7 @@ app.set("view engine", "handlebars");
 app.use(session({ secret: "keyboard cat", resave: true, saveUninitialized: true }));
 app.use(passport.initialize());
 app.use(passport.session());
+app.use(flash());
 
 // Routes
 require("./routes/apiRoutes")(app);

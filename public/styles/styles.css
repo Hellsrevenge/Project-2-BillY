@@ -29,3 +29,15 @@
 .rounded {
   border-radius: 10px;
 }
+.error {
+  background: #ffdbdb;
+  border: 1px solid #f00;
+  padding: 3px 5px;
+  margin: 10px 0;
+}
+.info {
+  background: #ecf3ff;
+  border: 1px solid #06f;
+  padding: 3px 5px;
+  margin: 10px 0;
+}

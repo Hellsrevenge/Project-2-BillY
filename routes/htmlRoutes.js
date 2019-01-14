@@ -1,6 +1,5 @@
 var db = require("../models");
 var passport = require("../config/passport");
-var path = require("path");
 // Requiring our custom middleware for checking if a user is logged in
 var isAuthenticated = require("../config/middleware/isAuthenticated");
 
@@ -13,22 +12,65 @@ module.exports = function(app) {
   // Authentication
 
   app.get("/login", function(req, res) {
-    // If the user already has an account send them to the members page
     if (req.user) {
-      res.redirect(`/account/${req.user.id}`);
+      res.redirect("/account");
+    } else {
+      res.render("login", {
+        error: req.flash("error"),
+        info: req.flash("info")
+      });
     }
-    res.render("login");
   });
 
-  app.post('/login',
-    passport.authenticate('local'),
-    function(req, res) {
-      res.redirect("/account");
-  });
+  app.post("/login",
+    passport.authenticate("local", {
+      successRedirect: "/account",
+      failureRedirect: "/login",
+      failureFlash: true
+    })
+  );
 
   app.get("/logout", function(req, res) {
     req.logout();
     res.redirect("/");
+  });
+
+  // Registration
+
+  app.get("/signup", function(req, res) {
+    if (req.user) {
+      res.redirect("/account");
+    } else {
+      res.render("signup", {
+        error: req.flash("error"),
+        info: req.flash("info")
+      });
+    }
+  });
+
+  app.post("/signup", function(req, res) {
+    db.Users.findOne({
+      where: {
+        email: req.body.email
+      }
+    }).then(function(dbUser) {
+      if (dbUser) {
+        req.flash("error", "User " +  dbUser.email +" already exists");
+        res.redirect("/signup");
+      } else {
+        db.Users.create({
+          user_name: req.body.user_name,
+          email: req.body.email,
+          password: req.body.password
+        }).then(function(data) {
+          req.flash("info", "Thank you for registration. You can login with your email and password.");
+          res.redirect("/login");
+        }).catch(function(err) {
+          req.flash("error", err);
+          res.redirect("/signup");
+        });
+      }
+    });
   });
 
   // Account
@@ -47,7 +89,6 @@ module.exports = function(app) {
         payments: data.Payments,
         date: Date.now()
       };
-      // // console.log(hbsObject);
       res.render("account", hbsObject);
     });
   });
