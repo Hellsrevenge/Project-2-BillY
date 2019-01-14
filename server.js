@@ -32,7 +32,9 @@ app.use(passport.session());
 app.use(flash());
 
 // Routes
-require("./routes/apiRoutes")(app);
+require("./routes/loginRoutes")(app);
+require("./routes/signupRoutes")(app);
+require("./routes/accountRoutes")(app);
 require("./routes/htmlRoutes")(app);
 
 var syncOptions = { force: false };
