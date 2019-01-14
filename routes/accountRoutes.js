@@ -38,4 +38,17 @@ module.exports = function(app) {
     });
   });
 
+
+  app.get("/addbill", isAuthenticated, function(req, res) {
+    res.render("addbill");
+  });
+
+  app.post("/addbill", isAuthenticated, function(req, res) {
+    db.Bills.create(req.body).then(function(bill) {
+      bill.UserId = req.user.id;
+      bill.CategoryId = 1;
+      bill.save();
+      res.redirect("/account");
+    });
+  });
 };
