@@ -6,13 +6,13 @@ var chart = new Chart(ctx, {
   // The data for our dataset
   data: {
     labels: [
-      "Utility",
-      "Fines",
-      "Entertainment",
-      "Grocery",
-      "Restaurants",
-      "Auto",
-      "Clothing"
+      "Parking",
+      "Notice of Renters Violation",
+      "Chicken Violation",
+      "Domestic Violence",
+      "Collusion",
+      "Homicide",
+      "Robbery"
     ],
     datasets: [
       {
