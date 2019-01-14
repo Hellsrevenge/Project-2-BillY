@@ -33,18 +33,28 @@
           <div class="row">
             <div class="col-md-6 col-md-offset-3">
               <h2>Sign Up Form</h2>
-              <form class="signup">
+                {{#if info}}
+                    <div class="info">
+                        {{info}}
+                    </div>
+                {{/if}}
+                {{#if error}}
+                    <div class="error">
+                        {{error}}
+                    </div>
+                {{/if}}
+              <form class="signup" action="/signup" method="POST">
                 <div class="form-group">
                   <label for="exampleInputUsername1">Username</label>
-                  <input type="username" class="form-control" id="user_name-input" placeholder="Username">
+                  <input type="username" class="form-control" name="user_name" id="user_name-input" placeholder="Username">
                 </div>
                 <div class="form-group">
                   <label for="exampleInputEmail1">Email address</label>
-                  <input type="email" class="form-control" id="email-input" placeholder="Email">
+                  <input type="email" class="form-control" name="email" id="email-input" placeholder="Email">
                 </div>
                 <div class="form-group">
                   <label for="exampleInputPassword1">Password</label>
-                  <input type="password" class="form-control" id="password-input" placeholder="Password">
+                  <input type="password" class="form-control" name="password" id="password-input" placeholder="Password">
                 </div>
                 <div style="display: none" id="alert" class="alert alert-danger" role="alert">
                   <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
@@ -105,4 +115,4 @@
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.6.1/js/mdb.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
 <script type="text/javascript" src="/js/index.js"></script>
-<script type="text/javascript" src="/js/signup.js"></script>
+<!--<script type="text/javascript" src="/js/signup.js"></script>-->
