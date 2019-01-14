@@ -14,7 +14,7 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent-555">
             <ul class="navbar-nav mr-auto">
               <li class="nav-item active">
-                <a class="nav-link" href="/signup">Sign Up
+                <a class="nav-link" href="/account/4">Account
                   <span class="sr-only">(current)</span>
                 </a>
               </li>
@@ -31,29 +31,23 @@
         </nav>
 
         {{!-- Main Body --}}
-        <h2 class="spacer">Login to you Account</h2>
-          {{#if info}}
-              <div class="info">
-                  {{info}}
-              </div>
-          {{/if}}
-          {{#if error}}
-            <div class="error">
-                {{error}}
-            </div>
-          {{/if}}
-        <form class="clearfix mb-4 login" action="/login" method="POST">
+        <h2 class="spacer">Add a new bill</h2>
+        <form class="clearfix mb-4 login" action="POST">
           <div class="form-group">
-            <label for="example-text">Email</label>
-<<<<<<< HEAD
-            <input type="text" id="email-input" class="form-control" aria-describedby="example-text" placeholder="DarthRooster@henhouse.com">
-=======
-            <input type="text" name="email" id="email-input" class="form-control" aria-describedby="example-text" placeholder="Email">
->>>>>>> 2fab60b304b80d1e5abe9e75fb0b94fde8df9991
+            <label for="example-text">Bill Title</label>
+            <input type="text" id="title-input" class="form-control" aria-describedby="example-text" placeholder="Poultry Misogyny">
           </div>
           <div class="form-group">
-            <label for="example-description">Password</label>
-            <input type="password" name="password" class="form-control" id="password-input" aria-describedby="example-description" placeholder="Password"></input>
+            <label for="example-description">Amount</label>
+            <input type="text" class="form-control" id="amount-input" aria-describedby="example-amount" placeholder="$1988.02"></input>
+          </div>
+          <div class="form-group">
+            <label for="example-description">Due Date</label>
+            <input type="text" class="form-control" id="dueDate-input" aria-describedby="example-dueDate" placeholder="MM/DD/YYYY"></input>
+          </div>
+          <div class="form-group">
+            <label for="example-description">Description:</label>
+            <input type="textarea" class="form-control" id="description-input" aria-describedby="example-description" placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ut magna tincidunt, sodales turpis eu, consequat lorem. Phasellus dictum consequat ultrices. Vivamus in velit ac massa vestibulum ornare id ac risus. Proin non tincidunt sem. Sed malesuada id diam vel vestibulum. Nulla facilisi. Donec tempor malesuada nisl eget feugiat. Fusce euismod aliquet lectus id ullamcorper. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec commodo consectetur vehicula. Aliquam maximus elit sed leo porttitor, accumsan eleifend diam semper. Integer ultricies, leo a mattis luctus, felis quam fermentum nisl, in faucibus massa nulla a lectus."></input>
           </div>
           <button id="submit" class="btn peach-gradient float-right">Submit</button>
         </form>
@@ -103,4 +97,4 @@
   crossorigin="anonymous"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.6.1/js/mdb.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
-<!--<script type="text/javascript" src="/js/login.js"></script>-->
+<script type="text/javascript" src="/js/login.js"></script>

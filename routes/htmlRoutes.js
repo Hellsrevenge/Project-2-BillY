@@ -1,11 +1,6 @@
-var db = require("../models");
-var passport = require("../config/passport");
-var path = require("path");
-// Requiring our custom middleware for checking if a user is logged in
-var isAuthenticated = require("../config/middleware/isAuthenticated");
-
 module.exports = function(app) {
 
+<<<<<<< HEAD
   //load homepage
   // app.get("/", function(req, res) {
   //   // If the user already has an account send them to the members page
@@ -26,10 +21,13 @@ module.exports = function(app) {
   // });
 
   // Load index model page
+=======
+>>>>>>> 2fab60b304b80d1e5abe9e75fb0b94fde8df9991
   app.get("/", function(req, res) {
     res.render("index");
   });
 
+<<<<<<< HEAD
   app.get("/login", function(req, res) {
     // If the user already has an account send them to the members page
     if (req.user) {
@@ -126,8 +124,11 @@ module.exports = function(app) {
     res.redirect("/");
   });
 
+=======
+>>>>>>> 2fab60b304b80d1e5abe9e75fb0b94fde8df9991
   // Render 404 page for any unmatched routes
   app.get("*", function(req, res) {
     res.render("404");
   });
+
 };

@@ -13,8 +13,8 @@ module.exports = {
         createdAt: new Date(),
         updatedAt: new Date(),
         dueDate: new Date(new Date().getTime()+10*24*60*60*1000), // 10 days
-        userId: 1,
-        categoryId: 1
+        UserId: 1,
+        CategoryId: 1
       },
       {
         title: 'Parking Violation',
@@ -25,8 +25,8 @@ module.exports = {
         createdAt: new Date(),
         updatedAt: new Date(),
         dueDate: new Date(new Date().getTime()+9*24*60*60*1000),
-        userId: 1,
-        categoryId: 1
+        UserId: 1,
+        CategoryId: 1
       },
       {
         title: 'Chicken Violation',
@@ -37,8 +37,8 @@ module.exports = {
         createdAt: new Date(),
         updatedAt: new Date(),
         dueDate: new Date(new Date().getTime()-(15*24*60*60*1000)),
-        userId: 1,
-        categoryId: 2
+        UserId: 1,
+        CategoryId: 2
       },
       {
         title: 'Parking Murder',
@@ -49,8 +49,8 @@ module.exports = {
         createdAt: new Date(),
         updatedAt: new Date(),
         dueDate: new Date(new Date().getTime()+8*24*60*60*1000),
-        userId: 1,
-        categoryId: 3
+        UserId: 1,
+        CategoryId: 3
       },
       {
         title: 'Road Rage',
@@ -61,8 +61,8 @@ module.exports = {
         createdAt: new Date(),
         updatedAt: new Date(),
         dueDate: new Date(new Date().getTime()+20*24*60*60*1000),
-        userId: 2,
-        categoryId: 1
+        UserId: 2,
+        CategoryId: 1
       },
       {
         title: 'Red light violation',
@@ -73,8 +73,8 @@ module.exports = {
         createdAt: new Date(),
         updatedAt: new Date(),
         dueDate: new Date(new Date().getTime()+13*24*60*60*1000),
-        userId: 2,
-        categoryId: 2
+        UserId: 2,
+        CategoryId: 2
       },
       {
         title: 'Seat belt violation',
@@ -85,8 +85,8 @@ module.exports = {
         createdAt: new Date(),
         updatedAt: new Date(),
         dueDate: new Date(new Date().getTime()+18*24*60*60*1000),
-        userId: 3,
-        categoryId: 1
+        UserId: 3,
+        CategoryId: 1
       }]);
     
   },

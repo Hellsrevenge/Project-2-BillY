@@ -40,6 +40,45 @@ module.exports = (sequelize, DataTypes) => {
     return this.getDataValue("dueDate") < Date.now();
   };
 
+  Bills.getSeedBills = function(user) {
+    return [{
+      title: "Carpool Violation",
+      status: 0,
+      amount: 320,
+      paid: false,
+      unpaid: true,
+      createdAt: new Date(),
+      updatedAt: new Date(),
+      dueDate: new Date(new Date().getTime() + 10 * 24 * 60 * 60 * 1000), // 10 days
+      UserId: user.id,
+      CategoryId: 1
+    },
+    {
+      title: "Parking Violation",
+      status: 0,
+      amount: 1200,
+      paid: false,
+      unpaid: true,
+      createdAt: new Date(),
+      updatedAt: new Date(),
+      dueDate: new Date(new Date().getTime() + 9 * 24 * 60 * 60 * 1000),
+      UserId: user.id,
+      CategoryId: 1
+    },
+    {
+      title: "Chicken Violation",
+      status: 0,
+      amount: 80,
+      paid: false,
+      unpaid: true,
+      createdAt: new Date(),
+      updatedAt: new Date(),
+      dueDate: new Date(new Date().getTime() - (15 * 24 * 60 * 60 * 1000)),
+      UserId: user.id,
+      CategoryId: 2
+    }];
+  };
+
   Bills.associate = function(models) {
     // We're saying that a Bills should belong to an Author
     // A Bills can't be created without an Author due to the foreign key constraint
